@@ -1,0 +1,22 @@
+ALGORITHM sentence reader 
+VAR
+    x , y , z : INTEGER := 0
+    sentence : STRING
+    character : first CHAR in the sentence
+    theend (boolean): false
+BEGIN
+    read(sentence)
+    WHILE (not theend) DO
+        read the next character
+        IF (character =/= '.') THEN 
+            x:=x+1
+            IF (character =' ' ) THEN
+            y:=y+1
+            IF (If character is 'A' OR 'E' OR 'I' OR 'O' OR 'U' OR 'a' OR 'e' OR 'i' OR 'o' OR 'u' Then) THEN
+                z=z+1
+            END_IF
+            END_IF
+        else theend:= true
+        END_IF
+        
+    END_WHILE
