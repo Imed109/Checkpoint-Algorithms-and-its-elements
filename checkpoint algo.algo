@@ -2,21 +2,36 @@ ALGORITHM sentence reader
 VAR
     x , y , z : INTEGER := 0
     sentence : STRING
-    character : first CHAR in the sentence
-    theend (boolean): false
+    character : CHAR
+   
 BEGIN
+    
+    x:=0
+    y:=0
+    z:=0
     read(sentence)
-    WHILE (not theend) DO
-        read the next character
-        IF (character =/= '.') THEN 
-            x:=x+1
-            IF (character =' ' ) THEN
-            y:=y+1
-            IF (If character is 'A' OR 'E' OR 'I' OR 'O' OR 'U' OR 'a' OR 'e' OR 'i' OR 'o' OR 'u' Then) THEN
-                z=z+1
+    FOR i FROM 1 TO LENGTH(sentence) DO
+        character := sentence[i]
+        IF character <> '.' THEN 
+            x := x + 1
+            IF character = ' ' THEN
+                y := y + 1
             END_IF
+            IF (character = 'a' OR character = 'e' OR character = 'i' OR character = 'o' OR character = 'u') THEN
+                z := z + 1
             END_IF
-        else theend:= true
+        ELSE
+            EXIT    
         END_IF
-        
-    END_WHILE
+    END_FOR
+
+    WRITE("Number of the characters", x)
+    WRITE("Number of words in the sentence: ", y + 1)
+    WRITE("Number of vowels in the sentence: ", z)
+END
+
+
+
+
+
+
